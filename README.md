@@ -7,6 +7,6 @@ Iteration plan
  - Understand the MVC2 architecture
  - Change the project to MVC2 architecture
  - Test the porject
-Time taken for each lab
+Iteration plan 
  - Calculator - 30 mins
  - Starbucks - 1 hour
