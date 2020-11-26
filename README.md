@@ -20,3 +20,10 @@ Iteration plan
 
 Time taken - 2 hours 
 
+# Lab3
+Iteration plan 
+ - Read the lecture note
+ - Understand spring framework 
+ - Change the calculator and starbucks projects to spring
+
+Time taken - 4 hours 
