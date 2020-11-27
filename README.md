@@ -27,3 +27,11 @@ Iteration plan
  - Change the calculator and starbucks projects to spring
 
 Time taken - 4 hours 
+
+# Lab
+Iteration plan 
+ - Read the lecture note 
+ - Understand how the spring form tag, localization and formatter work
+ - Change the product project to make use of spring form tag
+
+Time taken - 1 hour
