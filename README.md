@@ -28,7 +28,7 @@ Iteration plan
 
 Time taken - 4 hours 
 
-# Lab
+# Lab4
 Iteration plan 
  - Read the lecture note 
  - Understand how the spring form tag, localization and formatter work
