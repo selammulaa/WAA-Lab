@@ -8,38 +8,40 @@ import mum.edu.service.AdviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
- 
+import org.springframework.web.bind.annotation.*;
+
 @Controller
 @RequestMapping("/")
-public class AdviceController  {
-	
-	  @Autowired
-	  AdviceService adviceService;
+public class AdviceController {
 
-		@RequestMapping (value={"/","/advice"},method = RequestMethod.GET)
-		public String adviceForm(Model model) {
+    AdviceService adviceService;
 
- 			Map<Integer,String> roasts = adviceService.getAllRoasts();
- 			model.addAttribute("roasts",roasts);
-			
-			return "advice";
-		}
+    @Autowired
+    public AdviceController(AdviceService adviceService) {
+	  	this.adviceService = adviceService;
+    }
 
-	  @RequestMapping (value="/advice",method = RequestMethod.POST)
-	  public String adviceList( Integer roastKey, Model model) throws Exception {
+    @GetMapping(value = {"/", "/advice"})
+    public String adviceForm(Model model) {
 
-		  String roast = adviceService.getRoast(roastKey);
- 		List<String> roastList  = adviceService.getListByType(roast);
- 
-		model.addAttribute("roast",roast);
-		model.addAttribute("roastList",roastList);
-  		
-		return "display" ;
- 
-	}
-	
- 
+        Map<Integer, String> roasts = adviceService.getAllRoasts();
+        model.addAttribute("roasts", roasts);
+
+        return "advice";
+    }
+
+    @PostMapping(value = "/advice")
+    public String adviceList(Integer roastKey, Model model) throws Exception {
+
+        String roast = adviceService.getRoast(roastKey);
+        List<String> roastList = adviceService.getListByType(roast);
+
+        model.addAttribute("roast", roast);
+        model.addAttribute("roastList", roastList);
+
+        return "display";
+
+    }
+
+
 }

@@ -10,54 +10,54 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
- 
+
 @Controller
 public class CalculatorController {
- 
-  @Autowired
-  CalculatorService calculatorService;
-  
-  @RequestMapping(value={"/","/Calculator"} , method = RequestMethod.GET)
-  public String inputCalc() throws Exception {
-  
-       return  "CalculatorForm" ;    
-   }
-   
-  @RequestMapping(value= "/Calculator" , method = RequestMethod.POST)
-  public String handleCalc(Calculator calculator, Model model,RedirectAttributes redirectAttributes ) throws Exception {
-  
-		if (calculator.getAdd1() != null &&
-			 calculator.getAdd2() != null)
-		     calculatorService.add(calculator);
- 
-		if (calculator.getMult1() != null &&
-				 calculator.getMult2() != null)
-			calculatorService.mult(calculator);
 
-		redirectAttributes.addFlashAttribute( "calculator", calculator);
-		String heading = "Good Job, Kemosabe!";
- 		redirectAttributes.addAttribute( "heading","Kemosabe!");
-	
-        return  "redirect:results" ; 
-   }
-   
-  
-  @RequestMapping(value="/results", method = RequestMethod.GET)
-  public String calculatorResults( Model model) throws IOException {
+    final CalculatorService calculatorService;
 
-  	Calculator calculator = (Calculator)( ((ModelMap) model).get("calculator") );
+    public CalculatorController(CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
+    }
 
-  	if (calculator == null)
-  		throw new IOException("The calculation is Obsolete, Try Again!");
-  	  
+    @GetMapping(value = {"/", "/Calculator"})
+    public String inputCalc() throws Exception {
+
+        return "CalculatorForm";
+    }
+
+    @PostMapping(value = "/Calculator")
+    public String handleCalc(Calculator calculator, Model model, RedirectAttributes redirectAttributes) throws Exception {
+
+        if (calculator.getAdd1() != null &&
+                calculator.getAdd2() != null)
+            calculatorService.add(calculator);
+
+        if (calculator.getMult1() != null &&
+                calculator.getMult2() != null)
+            calculatorService.mult(calculator);
+
+        redirectAttributes.addFlashAttribute("calculator", calculator);
+        String heading = "Good Job, Selam!";
+        redirectAttributes.addAttribute("heading", "Selam!");
+
+        return "redirect:results";
+    }
+
+
+    @GetMapping(value = "/results")
+    public String calculatorResults(Model model) throws IOException {
+
+        Calculator calculator = (Calculator) (((ModelMap) model).get("calculator"));
+
+        if (calculator == null)
+            throw new IOException("The calculation is Obsolete, Try Again!");
+
         return "CalculatorView";
-  }
+    }
 
 
- 
 }

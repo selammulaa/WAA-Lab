@@ -3,10 +3,7 @@ package mum.edu.domain;
 import java.io.Serializable;
 
 	public class Calculator implements Serializable {
-		
-		/**
-		 * 
-		 */
+
 		private static final long serialVersionUID = 1L;
 		private Integer add1 = 0;
 		private Integer add2 = 0;
