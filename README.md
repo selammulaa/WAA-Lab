@@ -35,3 +35,20 @@ Iteration plan
  - Change the product project to make use of spring form tag
 
 Time taken - 1 hour
+
+# Lab5
+Iteration plan 
+ - Read the lecture note 
+ - Understand session management
+ - Do the lab
+
+Time taken - 2:30 hours
+
+# Lab6
+Iteration plan 
+ - Read the lecture note 
+ - Understand the validation API and error message localization
+ - Add validation to Student and Phone class
+
+Time taken - 3 Hours - (findig the correct dependency was a challenge)
+
