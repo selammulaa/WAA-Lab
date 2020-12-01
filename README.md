@@ -52,3 +52,12 @@ Iteration plan
 
 Time taken - 3 Hours - (findig the correct dependency was a challenge)
 
+# Lab7
+Iteration plan 
+ - Read the lecture note 
+ - Understand how to do i18n and l10n in spring project 
+ - Understand how to upload image
+ - internationalize the EmployeeValidDemo project 
+
+Time taken - 2:30 hours - (challenge - rendering of amharic language - fixed by adding a filter in the web.xml file and seting the baseencodeing to UTF-8 in the ReloadableResourceBundleMessageSource bean)
+
