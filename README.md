@@ -61,3 +61,11 @@ Iteration plan
 
 Time taken - 2:30 hours - (challenge - rendering of amharic language - fixed by adding a filter in the web.xml file and seting the baseencodeing to UTF-8 in the ReloadableResourceBundleMessageSource bean)
 
+# Lab8
+Iteration plan 
+ - Read the lecture note 
+ - Understand springboot and thymeleaf
+ - change the EmployeeValidDemo project to springboot
+
+Time taken - 2 Hours
+
