@@ -69,3 +69,13 @@ Iteration plan
 
 Time taken - 2 Hours
 
+# Lab9
+Iteration plan 
+ - Read the lecture note 
+ - Understand how RESTful API is build using spring
+ - Change the project to springboot and thymeleaf
+ - Complete the controller and ajax
+
+Time taken - 3 Hours and 15 mins
+
+
