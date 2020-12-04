@@ -78,4 +78,12 @@ Iteration plan
 
 Time taken - 3 Hours and 15 mins
 
+# Lab10
+Iteration plan 
+ - Read the lecture note 
+ - Understand Hibernate and Spring Data
+ - Do the lab
+
+Time taken - 1 Hour and 30 mins
+
 
