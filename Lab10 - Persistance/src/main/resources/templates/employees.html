@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<title>Employees</title>
+</head>
+<body>
+	<section>
+		<div class="jumbotron">
+			<div class="container">
+<!--				<img src="<spring:url value='/resource/images/kemosabes.jpg' />" />-->
+
+				<h1>Our People</h1>
+				<p>All of the Employees of our Company!!!</p>
+			</div>
+						<a th:href="@{/employees/add}" class="btn btn-danger btn-mini pull-right">Add a new one</a>
+ 			
+		</div>
+	</section>
+
+	<section class="container">
+		<div class="row">
+			<div th:each="employee: ${employees}" >
+				<div class="col-sm-4 col-md-4" style="padding-bottom: 15px">
+					<div class="thumbnail">
+ 						<div class="caption">
+							<p>First Name - <span th:text="${employee.firstName}"></span></p>
+							<p>Last Name -  <span th:text="${employee.lastName}"></span> </p>
+							<p>Age -         <span th:text="${employee.age}"></span> </p>
+							<p>Title -       <span th:text="${employee.title}"></span> </p>
+							<p>Number -      <span th:text="${employee.employeeNumber}"></span> </p>
+							<h4>Address:  </h4>
+							<p>  <span th:text="${employee.address.street}"></span> </p>
+							<p> <span th:text="${employee.address.city}"></span> <span th:text="${employee.address.state}"></span> <span th:text="${employee.address.zipCode}"></span> </p>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
